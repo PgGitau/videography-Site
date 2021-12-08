@@ -1,0 +1,131 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+/*primary header*/
+.primary-header {
+    border: .1em solid black;
+    align-items: center;
+    justify-content: space-between;
+    color: black;
+    /*to fix the header at the top even when scrolling*/
+    position: fixed;
+    width: 100%;
+    top: 0;
+    overflow: hidden;
+    background-color: rgb(235, 49, 16);
+}
+section { /*moves the section section below the header after position:fixed*/
+    margin-top: 6rem;
+}
+.logo {
+    border: .15em solid rgb(20, 2, 2);
+    margin: 2rem;
+}
+.flex {
+    display: flex;
+    gap: var(--gap, 1rem);
+}
+.mobile-nav-toggle {
+    display: none;
+}
+
+/*primary navigation*/
+.primary-navigation {
+    list-style: none;
+    padding: 0;
+    margin:0;
+    /*border: .15em solid blue;*/
+
+}
+.primary-navigation a {
+    text-decoration: none;
+    color: black;
+}
+/*@supports (backdrop-filter: blur(1rem)){ /*if browser supports b-filter:blur*/
+    /*.primary-navigation {
+        background: hsl(0 0% 100% / 0.1);
+        backdrop-filter: blur(1rem)
+    }
+} */
+/* button {
+    color: white;
+} */
+ body {
+     overflow-x: hidden; /*to prevent any overflows that happen due to transform*/
+ }
+
+ 
+/*media queries*/
+@media (max-width: 35em) { /*or 560px/ mobile view*/
+    .primary-navigation {
+        --gap: 2em;
+
+        position: fixed;
+        z-index: 1000;
+        inset: 0 0 0 30%; /*inset is shorthand for top left right bottom*/
+       
+        flex-direction: column; /*makes the nav As be in column form not row*/
+        padding: min(30vh, 10rem) 2em;
+
+        /*background: hsl(0 10% 10% / 0.1); you can use the old comma way for hsl too*/
+        background-color: tomato;
+
+        transform: translateX(100%); /*moves 100% of its own width to the right*/
+        transition: transform 350ms ease-in;
+    }
+
+    .primary-navigation[data-visible="true"] { /*if data-visible="true" then the width will pop back from the right due to setting translateX to 0%*/
+        transform: translateX(0%);
+    }
+
+    .mobile-nav-toggle[aria-expanded="true"] {
+        background-image: url('Images/X-icon.svg');
+    }
+
+    .mobile-nav-toggle {
+        display: block; /*since its hidden for wider views n/b not display:contents*/
+        position: absolute;
+        top: 2rem;
+        right: 2rem;
+
+        z-index: 9999;
+        background-image: url("images/bars-icon.svg");
+        background-color: transparent;
+        background-repeat: no-repeat; /*so that the icon doesn't repeat itself when width increases*/
+      
+        width: 2rem;
+        border: 0;
+        aspect-ratio: 1; /*edits both width and height sizes*/
+        
+    }
+
+    .mobile-nav-toggle:hover {
+        cursor: pointer;
+    }
+
+    .primary-navigation li {
+        background-color: transparent;
+    }
+}
+
+@media (min-width: 35em) {
+    .primary-navigation {
+        --gap: clamp(1.5rem, 5vw, 3rem); /*clamp(min, mid, max values)*/
+        padding-block: 2rem; /*padding block is top, bottom*/
+        padding-inline: 2.2rem; /*padding inline is left, right*/
+    }
+}
+
+
+.sr-only { /*for screen-reader only so visually hidden*/
+    display: none;
+}
+
+/*to minimise transition when resizing screen [its not really necessary]*/
+.resize-animation-stopper * {
+    transition: none !important;
+    animation: none !important;
+}
