@@ -92,7 +92,7 @@ section { /*moves the section section below the header after position:fixed*/
         right: 2rem;
 
         z-index: 9999;
-        background-image: url("images/bars-icon.svg");
+        background-image: url("Images/bars-icon.svg");
         background-color: transparent;
         background-repeat: no-repeat; /*so that the icon doesn't repeat itself when width increases*/
       
