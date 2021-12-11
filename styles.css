@@ -84,7 +84,19 @@
 
  
 /*media queries*/
- @media (max-width: 40em) { /*or 640px/ mobile view*/
+@media (max-width: 23.375em) { /*below 374px */
+    .primary-header {
+        --gap: 2rem;
+    }
+    .logo {
+        padding-block: .3rem;
+    }
+   .logo span {
+    font-size: .9rem;
+   }
+
+}
+ @media (max-width: 40em) { /*or below 640px/ mobile view*/
     .primary-navigation {
         /* border: 2px solid black; */
          --gap: 2rem;
