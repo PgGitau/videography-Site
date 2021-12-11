@@ -4,46 +4,71 @@
     margin: 0;
 }
 
-/*primary header*/
+/*primary header -->The whole header*/
 .primary-header {
-    border: .1em solid black;
+    /* border: .1em solid black; */
     align-items: center;
     justify-content: space-between;
-    color: black;
+    /* color: black; */
+    
     /*to fix the header at the top even when scrolling*/
     position: fixed;
     width: 100%;
     top: 0;
     overflow: hidden;
-    background-color: rgb(235, 49, 16);
+    
+    background-color: rgba(87, 13, 13, 0.795);
 }
-section { /*moves the section section below the header after position:fixed*/
-    margin-top: 6rem;
-}
+
 .logo {
-    border: .15em solid rgb(20, 2, 2);
-    margin: 2rem;
+    margin: 1.5rem;
+    padding: .5rem;
+
+    /* border: 2px solid red; */
+    /* border-top-left-radius: .9rem;
+    border-bottom-right-radius: .9rem; */
+    /* border-style: dotted rgba(228, 151, 9, 0.932); */
+    /* border-inline: .2rem solid rgba(228, 151, 9, 0.932);   */
+}
+.logo span {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-style: italic;
+    font-weight: 700;
+    font-size: 1.3rem;
+    color:rgb(179, 120, 11);
 }
 .flex {
+    /* border: .15em solid rgb(35, 11, 248); */
     display: flex;
-    gap: var(--gap, 1rem);
+    gap: var(--gap, 7rem);
 }
 .mobile-nav-toggle {
     display: none;
 }
 
-/*primary navigation*/
+/*primary navigation --> ul holding The Right Links*/
 .primary-navigation {
     list-style: none;
-    padding: 0;
+    padding: .7rem;
     margin:0;
-    /*border: .15em solid blue;*/
+    /* border: .15em solid rgb(241, 235, 238); */
 
 }
 .primary-navigation a {
     text-decoration: none;
-    color: black;
+    color:rgb(0, 0, 0);
+    border: .15em solid rgb(61, 4, 31);
+
+    padding: .5rem;
+    border-radius: 9%;
+
+    font-size: 1.1rem;
+    font-weight: bold;
 }
+
+/* .primary-navigation li {
+    border: .15em solid rgb(61, 4, 31);
+} */
 /*@supports (backdrop-filter: blur(1rem)){ /*if browser supports b-filter:blur*/
     /*.primary-navigation {
         background: hsl(0 0% 100% / 0.1);
@@ -59,19 +84,21 @@ section { /*moves the section section below the header after position:fixed*/
 
  
 /*media queries*/
-@media (max-width: 35em) { /*or 560px/ mobile view*/
+ @media (max-width: 40em) { /*or 640px/ mobile view*/
     .primary-navigation {
-        --gap: 2em;
+        /* border: 2px solid black; */
+         --gap: 2rem;
 
         position: fixed;
-        z-index: 1000;
-        inset: 0 0 0 30%; /*inset is shorthand for top left right bottom*/
-       
+        z-index: 1000; /*in relation to mobile-nav-toggle button*/
+        inset: 0 0 0 30%; /*inset is shorthand for top left right bottom */
+      
+    
         flex-direction: column; /*makes the nav As be in column form not row*/
-        padding: min(30vh, 10rem) 2em;
+        padding: min(30vh, 10rem) 2rem;
 
         /*background: hsl(0 10% 10% / 0.1); you can use the old comma way for hsl too*/
-        background-color: tomato;
+        background-color: rgb(119, 64, 64);
 
         transform: translateX(100%); /*moves 100% of its own width to the right*/
         transition: transform 350ms ease-in;
@@ -86,7 +113,7 @@ section { /*moves the section section below the header after position:fixed*/
     }
 
     .mobile-nav-toggle {
-        display: block; /*since its hidden for wider views n/b not display:contents*/
+        display: block; /*since its display:hidden for wider views n/b not display:contents*/
         position: absolute;
         top: 2rem;
         right: 2rem;
@@ -106,22 +133,54 @@ section { /*moves the section section below the header after position:fixed*/
         cursor: pointer;
     }
 
-    .primary-navigation li {
-        background-color: transparent;
+    .primary-navigation a {
+        border: 0;
     }
 }
 
-@media (min-width: 35em) {
+ @media (min-width: 40em) { /*above 640px*/
+     .primary-navigation {
+        --gap: clamp(.9rem, 2vw, 3rem); /*clamp(min, mid, max values)*/
+        /*--gap: 1rem;*/
+        /*padding-block: 2rem; /*padding block is top, bottom*/
+        /*padding-inline: 2.2rem; /*padding inline is left, right*/
+   }
+   .logo {
+    margin: 1.5rem .5rem;
+    padding-inline: .07rem;
+   }
+   .logo span {
+    font-size: .9rem;
+   }
+} 
+@media (min-width: 48em) { /*above 768px*/
     .primary-navigation {
-        --gap: clamp(1.5rem, 5vw, 3rem); /*clamp(min, mid, max values)*/
-        padding-block: 2rem; /*padding block is top, bottom*/
-        padding-inline: 2.2rem; /*padding inline is left, right*/
-    }
+        --gap: clamp(2rem, 5vw, 7rem); /*clamp(min, mid, max values)*/
+        /*--gap: 1rem;*/
+        /*padding-block: 2rem; /*padding block is top, bottom*/
+        /*padding-inline: 2.2rem; /*padding inline is left, right*/
+   }
+   .logo span {
+    font-size: 1.3rem;
+   }
+}
+@media (min-width: 160em) { /*above 2560px*/
+    .primary-navigation {
+        --gap: clamp(8rem, 7vw, 20rem); /*clamp(min, mid, max values)*/
+   }
+   .logo span {
+    font-size: 1.6rem;
+   }
 }
 
 
-.sr-only { /*for screen-reader only so visually hidden*/
-    display: none;
+
+/*.sr-only { /*for screen-reader only so visually hidden*/
+    /*display: none;
+}*/
+
+section { /*moves the SECTION section below the header after position:fixed*/
+    margin-top: 6rem;
 }
 
 /*to minimise transition when resizing screen [its not really necessary]*/
@@ -129,3 +188,4 @@ section { /*moves the section section below the header after position:fixed*/
     transition: none !important;
     animation: none !important;
 }
+
