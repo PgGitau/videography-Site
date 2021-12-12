@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Videography</title>
+    <title>Proctus Media</title>
     <link rel="stylesheet" href="styles.css" type="text/css">
     <script src="nav.js" defer></script>
     <script src="https://kit.fontawesome.com/c72cbdb9b9.js" crossorigin="anonymous"></script>
@@ -11,24 +11,24 @@
 <body>
     <header class="primary-header flex">
         <div class="logo">
-            <i class="far fa-play-circle fa-2x"></i><span>PROCTUS MEDIA</span>
+            <img src="Images/logos/blue-large.png" alt="Proctus-Media logo">
         </div>
 
 
-        <button class="mobile-nav-toggle" aria-controls="primary-navigation" aria-expanded="false"><span class="sr-only">Menu</span></button> <!--aria-controls shows screen reader what the button controls in this case the one with same id name as ari-controls-->
+        <!--<span class="menu">MENU</span>--><button class="mobile-nav-toggle" aria-controls="primary-navigation" aria-expanded="false"><span class="sr-only">MENU</span></button> <!--aria-controls shows screen reader what the button controls in this case the one with same id name as ari-controls-->
         <!--sr-only is a class in the stylesheet for screen reader only-->
         <!--aria-expanded=false means the menu is not expanded when clicked is when its value will be true-->
         
         <nav>
             <ul id="primary-navigation" data-visible="false" class="primary-navigation flex"> <!--data-attribute is a custom attribute you can create for JS purposes-->
                 <li>
-                    <a href="index.html">Home</a></li>
+                    <a href="index.html"><i class="fas fa-home"></i>Home</a></li>
                 <li>
-                    <a href="services.html">Services</a></li>
+                    <a href="services.html"><i class="fas fa-info-circle"></i>Services</a></li>
                 <li>
-                    <a href="crew.html">Crew</a></li>
+                    <a href="crew.html"><i class="fas fa-shipping-fast"></i>Crew</a></li>
                 <li>
-                    <a href="location.html">Location</a></li>
+                    <a href="location.html"><i class="fab fa-servicestack"></i>Location</a></li>
             </ul>
         </nav>
     </header>
