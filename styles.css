@@ -10,41 +10,52 @@
     align-items: center;
     justify-content: space-between;
     /* color: black; */
-    
+
     /*to fix the header at the top even when scrolling*/
     position: fixed;
     width: 100%;
     top: 0;
     overflow: hidden;
-    
-    background-color: rgb(119, 64, 64);;
+
+    background-color: #427BD2;
 }
-
+.flex {
+    /* border: .15em solid rgb(35, 11, 248); */
+    display: flex;
+    gap: var(--gap, 2rem);
+}
+.mobile-nav-toggle {
+    display: none;
+}
+/* .menu {
+    display: none;
+} */
+/*The logo section of header*/
 .logo {
-    margin: 1.5rem;
-    padding: .5rem;
-
+    /* margin: 1.5rem; */
+    /* padding: .01rem; */
     /* border: 2px solid red; */
+    margin: .5rem;
     /* border-top-left-radius: .9rem;
     border-bottom-right-radius: .9rem; */
     /* border-style: dotted rgba(228, 151, 9, 0.932); */
     /* border-inline: .2rem solid rgba(228, 151, 9, 0.932);   */
 }
-.logo span {
+.logo img {
+    object-position: center;
+    object-fit: cover;
+    max-height: 4rem;
+    min-width: 10rem;
+    /* font-size: large; */
+}
+/* .logo span {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-style: italic;
     font-weight: 700;
     font-size: 1.3rem;
     color:rgb(179, 120, 11);
-}
-.flex {
-    /* border: .15em solid rgb(35, 11, 248); */
-    display: flex;
-    gap: var(--gap, 7rem);
-}
-.mobile-nav-toggle {
-    display: none;
-}
+} */
+
 
 /*primary navigation --> ul holding The Right Links*/
 .primary-navigation {
@@ -53,13 +64,15 @@
     margin:0;
     /* border: .15em solid rgb(241, 235, 238); */
 
+    /* --gap: clamp(5rem, 4vw, 8rem); */
+
 }
 .primary-navigation a {
     text-decoration: none;
     color:rgb(0, 0, 0);
     border: .15em solid rgb(61, 4, 31);
 
-    padding: .5rem;
+    padding: .3rem;
     border-radius: 9%;
 
     font-size: 1.1rem;
@@ -82,35 +95,30 @@
      overflow-x: hidden; /*to prevent any overflows that happen due to transform*/
  }
 
- 
-/*media queries*/
-@media (max-width: 23.375em) { /*below 374px */
-    .primary-header {
-        --gap: 2rem;
-    }
-    .logo {
-        padding-block: .3rem;
-    }
-   .logo span {
-    font-size: .9rem;
-   }
 
-}
- @media (max-width: 40em) { /*or below 640px/ mobile view*/
+/*media queries*/
+ @media (max-width: 40em) { /*or below 640px or mobile view*/
+    /* .menu { */
+        /* display: block; */
+        /* position: absolute; */
+        /* top: 2.5rem; set at breakpoints
+        left: 27rem;  */
+        /* font-weight: bold; */
+    /* } */
     .primary-navigation {
-        /* border: 2px solid black; */
-         --gap: 2rem;
+        /* border: 2px solid rgb(0, 0, 0); */
+        /* --gap: 2rem; */
 
         position: fixed;
         z-index: 1000; /*in relation to mobile-nav-toggle button*/
         inset: 0 0 0 30%; /*inset is shorthand for top left right bottom */
-      
-    
-        flex-direction: column; /*makes the nav As be in column form not row*/
+
+
+        flex-direction: column; /* makes the nav As be in column form not row */
         padding: min(30vh, 10rem) 2rem;
 
         /*background: hsl(0 10% 10% / 0.1); you can use the old comma way for hsl too*/
-        background-color: rgb(119, 64, 64);
+        background-color: #427BD2;
 
         transform: translateX(100%); /*moves 100% of its own width to the right*/
         transition: transform 350ms ease-in;
@@ -134,11 +142,11 @@
         background-image: url("Images/bars-icon.svg");
         background-color: transparent;
         background-repeat: no-repeat; /*so that the icon doesn't repeat itself when width increases*/
-      
+
         width: 2rem;
         border: 0;
         aspect-ratio: 1; /*edits both width and height sizes*/
-        
+
     }
 
     .mobile-nav-toggle:hover {
@@ -148,48 +156,69 @@
     .primary-navigation a {
         border: 0;
     }
+
+    /* .primary-navigation li {
+        list-style-type: circle;
+    } */
 }
 
- @media (min-width: 40em) { /*above 640px*/
-     .primary-navigation {
-        --gap: clamp(.9rem, 2vw, 3rem); /*clamp(min, mid, max values)*/
-        /*--gap: 1rem;*/
+/*@media (max-width: 23.375em) { /*below 374px */
+    /*.primary-header {
+        --gap: 2rem;
+    }*/
+    /* .logo {
+        padding-block: .3rem;
+    }
+   .logo span {
+    font-size: .9rem;
+   } */
+
+/*}*/
+
+ @media (min-width: 41em) { /*above 640px*/
+      .primary-navigation {
+        --gap: clamp(2.5rem, 2vw, 5rem); /*clamp(min, mid, max values)
+        /* --gap: 1rem; */
         /*padding-block: 2rem; /*padding block is top, bottom*/
         /*padding-inline: 2.2rem; /*padding inline is left, right*/
-   }
-   .logo {
+   } 
+   /* .logo {
     margin: 1.5rem .5rem;
     padding-inline: .07rem;
    }
    .logo span {
     font-size: .9rem;
-   }
-} 
-@media (min-width: 48em) { /*above 768px*/
-    .primary-navigation {
+   } */
+}
+/*@media (min-width: 48em) { /*above 768px*/
+    /*.primary-navigation {
         --gap: clamp(2rem, 5vw, 7rem); /*clamp(min, mid, max values)*/
         /*--gap: 1rem;*/
         /*padding-block: 2rem; /*padding block is top, bottom*/
         /*padding-inline: 2.2rem; /*padding inline is left, right*/
-   }
-   .logo span {
+   /*}
+   /* .logo span {
     font-size: 1.3rem;
-   }
-}
-@media (min-width: 160em) { /*above 2560px*/
-    .primary-navigation {
+   } */
+/*}*/
+/*@media (min-width: 160em) { /*above 2560px*/
+    /*.primary-navigation {
         --gap: clamp(8rem, 7vw, 20rem); /*clamp(min, mid, max values)*/
-   }
-   .logo span {
+   /*}
+   /* .logo span {
     font-size: 1.6rem;
-   }
+   } */
+/*}*/
+
+
+
+.sr-only { /*for screen-reader only so visually hidden*/
+    display: none;
+    /* position: absolute;
+    top: .5rem;
+    right: 2rem;
+    font-weight: bold; */
 }
-
-
-
-/*.sr-only { /*for screen-reader only so visually hidden*/
-    /*display: none;
-}*/
 
 section { /*moves the SECTION section below the header after position:fixed*/
     margin-top: 6rem;
