@@ -170,7 +170,7 @@ body {
 } */
 .services .services-each {
     border: 2px solid rgba(10, 4, 29, 0.801);
-    border-radius: 1%;
+    border-radius: .5rem;
     /* margin-bottom: .5rem; */
     height: 20rem;
     max-width: 30rem;
