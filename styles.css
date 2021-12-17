@@ -76,11 +76,12 @@ body {
 
 
 /*HEADER IMAGE SECTION AFTER NAVBAR*/
-section { /*moves the SECTION section below the header after position:fixed*/
-    margin-top: 5.2rem;
-}
+/* section { moves the SECTION section below the header after position:fixed */
+    /* margin-top: 5.2rem; */
+/* } */
 .header-image {
     /* border: 2px solid black; */
+    margin-top: 5.2rem; /*moves the SECTION section below the header after position:fixed */
     position: relative;
 
     height: 31.25rem;
@@ -136,7 +137,143 @@ section { /*moves the SECTION section below the header after position:fixed*/
     font-weight: 900;
 } 
 
+
+/*SERVICES SECTION*/
+.services-header{
+    /* border: 2px solid red; */
+    background-color: rgba(137, 43, 226, 0.158);
+    margin-bottom: 1rem;
+}
+.services-header #serv-head {
+    /* border: 2px solid rgb(72, 8, 175); */
+    text-align: center;
+    font-size: 1.7rem;
+    font-weight: bold;
+    text-decoration: underline;
+    padding-top: 2rem;
+}
+.services {
+    border-inline: 2px solid rgb(20, 3, 3);
+    /* border-radius: 2%; */
+    padding: 2rem;
+
+    width: 90%;
+    margin: auto;
+
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+/* .services > * {
+    flex-basis: 100%;
+} */
+.services .services-each {
+    border: 2px solid rgba(10, 4, 29, 0.801);
+    border-radius: 1%;
+    /* margin-bottom: .5rem; */
+    height: 20rem;
+    max-width: 30rem;
+
+    background-position: center;
+    background-size: cover;
+
+    position: relative;
+    z-index: 2;
+    /* max-height: 300px; */
+}
+.services .services-each::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(7, 7, 7, 0.678);
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+}
+.services-each h1, .services-each p {
+    /* border: 2px solid rgb(39, 6, 158); */
+    color: whitesmoke;
+
+}
+.services-each h1 {
+    margin-bottom: 1rem;
+    font-size: 2.2rem;
+    font-family: 'IBM Plex Mono', sans-serif;
+}
+.services-each p {
+    margin: 5rem 0 3rem 0;
+    font-size: 1.2rem;
+    font-family: 'verdana';
+    /* color: rgb(241, 218, 188); */
+    /* text-align: justify; */
+}
+.services-each a {
+    color: rgb(241, 169, 75);
+    font-size: 1.1rem;
+    font-weight: bold;
+    border: 2px solid rgb(152, 152, 155);
+    border-radius: .4rem;
+    padding: .3rem;
+    text-decoration: none;
+    transition: border-radius 200ms ease-in, border 200ms ease-in, background-color 200ms ease-in-out, color 200ms ease-out;
+}
+.services-each a:hover {
+    background-color: rgb(81, 92, 17);
+    color: rgb(255, 255, 255);
+    border-radius: 1rem;
+}
+.photo {
+    background-image: url("Images/photography.webp");
+}
+.video {
+    background-image: url("Images/vid-production.webp");
+      
+}
+.edit {
+    background-image: url("Images/editing.webp");
+      
+}
+.animations {
+    background-image: url("Images/animation.webp");  
+}
+
+
+
+
 /*media queries*/
+@media (max-width: 72.45em) { /*below 1160px */
+    .services .services-each {
+        /* border: 2px solid rgba(202, 91, 17, 0.801); */
+
+        height: 15rem;
+        max-width: 20rem;
+    }
+    .services-each h1 {
+        margin-bottom: 1rem;
+        font-size: 1.5rem;  
+    }
+    .services-each p {
+        margin: 4rem 0 2rem 0;
+        font-size: .9rem;
+    }
+    .services-each a {
+        font-size: 1rem;
+        padding: .3rem;
+    }
+}
+@media (min-width: 40.01em) and (max-width: 50.625em) { /*btw 640 and 810px */
+    .services {
+        /* border-inline: 2px solid rgb(204, 20, 20); */
+        width: 98%;
+    }
+    
+     .services .services-each {
+        /* border: 2px solid rgba(202, 91, 17, 0.801); */
+        width: 17rem;
+    }
+}
 @media (max-width: 40em) { /*or below 640px or mobile view*/
     /* .menu { */
         /* display: block; */
@@ -198,7 +335,7 @@ section { /*moves the SECTION section below the header after position:fixed*/
     }
 
     .header-pic h1 {
-        padding-top: 4.5rem;
+        padding-top: 3.5rem;
         width: 90%;
         margin: auto;
     }
@@ -206,9 +343,13 @@ section { /*moves the SECTION section below the header after position:fixed*/
         width: 80%;
         margin: auto;
     } 
-    
+    .services-each p {
+        margin: 2rem 0 1rem 0;
+        font-size: .9rem;
+    }
     
 }
+
 
 @media (max-width: 25.0625em) { /*below 402px */
     .header-pic {
@@ -222,7 +363,17 @@ section { /*moves the SECTION section below the header after position:fixed*/
 @media (max-width: 20em) { /*below 321px */
     .header-pic h1 {
         /* border: 2px solid rgb(15, 15, 15); */
+        width: 100%;
         padding-top: .5rem;
+        font-size: 2.3rem;
+        line-height: 2rem;
+    }
+}
+@media (max-width: 15.625em) { /*below 251px */
+    .header-pic h1 {
+        /* border: 2px solid rgb(236, 25, 25); */
+        font-size: 2rem;
+        line-height: 1.8rem;
     }
 }
 
