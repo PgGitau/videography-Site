@@ -331,6 +331,9 @@ body {
         /* border: 2px solid rgba(202, 91, 17, 0.801); */
         width: 17rem;
     }
+    .why-us-inner {
+        width: 100%;
+    }
     
 }
 @media (max-width: 40em) { /*or below 640px or mobile view*/
