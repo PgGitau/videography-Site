@@ -140,8 +140,9 @@ body {
 
 /*SERVICES SECTION*/
 .services-header{
+    margin-bottom: 2rem;
     /* border: 2px solid red; */
-    background-color: rgba(137, 43, 226, 0.158);
+    /* background-color: rgba(137, 43, 226, 0.158); */
     /* padding-bottom: 5rem; */
 }
 .services-header #serv-head {
@@ -154,6 +155,7 @@ body {
 }
 .services {
     border: 2px solid rgb(20, 3, 3);
+    background-color: rgba(137, 43, 226, 0.158);
     border-radius: 2rem;
     padding: 2rem;
 
@@ -199,7 +201,7 @@ body {
 }
 .services-each h1 {
     margin-bottom: 1rem;
-    font-size: 2.2rem;
+    font-size: 2rem;
     font-family: 'IBM Plex Mono', sans-serif;
 }
 .services-each p {
@@ -242,8 +244,11 @@ body {
 /*WHY US SECTIO*/
 .why-us {
     /* border-top: 2px solid rgb(105, 70, 3); */
-    background-color: rgba(137, 43, 226, 0.158);
+    border-radius: 2rem;
+    /* background-color: rgba(0, 0, 0, 0.158); */
+    background-color: rgba(26, 12, 6, 0.514);
     padding-bottom: 2rem;
+    margin-bottom: 2rem;
 }
 .why-us #why-header {
     padding-top: 3rem;
@@ -291,12 +296,81 @@ body {
 .why-each button {
     background-color: transparent;
     border: 2px solid rgb(0, 0, 0);
-    background-color: rgb(105, 77, 5);
-    color: rgb(39, 2, 2);
+    background-color: rgb(7, 163, 20);
+    color: rgb(235, 230, 230);
     font-weight: bold;
+    font-size: 1.1em;
     padding: .5rem;
     border-radius: .5rem;
 }
+
+/*MEMBER SECTION*/
+.member {
+    /* border: 2px solid red; */
+    padding: 1em;
+}
+.member-inner {
+    /* border: 2px solid rgb(53, 19, 177); */
+    padding: 1rem;
+    display: flex;
+    
+    /* align-items: center; */
+    /* gap: 1rem; */
+}
+.member-inner > * {
+    flex-basis: 100%;
+}
+.member-img {
+    border: 2px solid rgb(0, 0, 0);
+    border-right: 0;
+    border-top-left-radius: 1rem;
+    border-bottom-left-radius: 1rem;
+
+    height: 20rem;
+    /* min-width: 35rem; */
+    background-image: url("Images/member1.webp");
+    background-position: center;
+    background-size: cover;
+}
+.member-text {
+    border-top-right-radius: 1rem;
+    border-left: 0;
+    border-bottom-right-radius: 1rem;
+    border: 2px solid rgb(19, 3, 19);
+    background-color: rgba(255, 255, 0, 0.726);
+}
+.member-text h1 {
+    /* border: 2px solid rgb(10, 10, 10); */
+    margin-left: 1rem;
+    font-weight: 900;
+    font-size: 3rem;
+    margin-bottom: 2rem;
+}
+.member-text p {
+    /* border: 2px solid rgb(10, 10, 10); */
+    width: 60%;
+    line-height: 1.1rem;
+    margin-left: 1rem;
+    font-family: 'IBM Plex Mono', sans-serif;
+    font-size: 1.3rem;
+    margin-block: 2rem;
+}
+.member-text button {
+    border: 2px solid rgb(10, 10, 10);
+    border-radius: .5em;
+    background-color: rgb(0, 0, 0);
+    color: rgb(218, 204, 19);
+    margin-left: 1rem;
+    padding: .5rem;
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+.member-text span {
+    font-style: italic;
+    font-weight: bold;
+    color: rgb(4, 3, 82);
+}
+
 
 
 
@@ -320,6 +394,12 @@ body {
         font-size: 1rem;
         padding: .3rem;
     }
+    .member-text p {
+        width: 90%;
+    }
+    .member-text h1 {
+        font-size: 2.3rem;
+    }
 }
 @media (min-width: 40.01em) and (max-width: 50.625em) { /*btw 640 and 810px */
     .services {
@@ -334,7 +414,18 @@ body {
     .why-us-inner {
         width: 100%;
     }
-    
+    .member-text h1 {
+        margin-left: .5rem;
+        font-size: 1.9rem;
+    }
+    .member-text p {
+        width: 100%;
+        margin-left: .5rem;
+        font-size: 1rem;
+    }
+    .member-text button {
+        font-size: 1rem;
+    }
 }
 @media (max-width: 40em) { /*or below 640px or mobile view*/
     /* .menu { */
@@ -412,6 +503,39 @@ body {
     .why-us-inner {
         flex-wrap: wrap;
     }
+    .member-inner {
+        flex-wrap: wrap;
+    }
+    .member-img {
+        border-top-left-radius: 1rem;
+        border-top-right-radius: 1rem;
+        border-bottom-left-radius: 0;
+    
+        max-height: 15rem;
+        /* min-width: 35rem; */
+    }
+    .member-text {
+        border-top: 0;
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 1rem;
+        border-bottom-left-radius: 1rem;
+        padding-bottom: 3rem;
+    }
+    .member-text h1 {
+        font-size: 2rem;
+        margin-bottom: 0;
+    }
+    .member-text p {
+        /* border: 2px solid rgb(10, 10, 10); */
+        width: 80%;
+        font-size: 1.3rem;
+        margin-block: .5rem;
+    }
+    .member-text button {
+        border-radius: .5em;
+        padding: .5rem;
+        font-size: 1rem;
+    }
 }
 
 
@@ -422,6 +546,12 @@ body {
     .header-pic h1 {
         /* border: 2px solid red; */
         padding-top: 3rem;
+    }
+}
+@media (max-width: 22.5em) { /*below 360px */
+    .member-text h1 {
+        /* border: 2px solid red; */
+        font-size: 1.5rem;
     }
 }
 @media (max-width: 20em) { /*below 321px */
