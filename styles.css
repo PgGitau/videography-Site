@@ -38,7 +38,7 @@ body {
 .logo {
     margin: .5rem;
 }
-.logo img {
+.logo img, .f-logo img {
     object-position: center;
     object-fit: cover;
     max-height: 4rem;
@@ -155,7 +155,7 @@ body {
 }
 .services {
     border: 2px solid rgb(20, 3, 3);
-    background-color: rgba(137, 43, 226, 0.158);
+    background-color: rgba(30, 3, 56, 0.459);
     border-radius: 2rem;
     padding: 2rem;
 
@@ -241,10 +241,11 @@ body {
     background-image: url("Images/animation.webp");  
 }
 
-/*WHY US SECTIO*/
+
+/*WHY US SECTION*/
 .why-us {
     /* border-top: 2px solid rgb(105, 70, 3); */
-    border-radius: 2rem;
+    /* border-radius: 2rem; */
     /* background-color: rgba(0, 0, 0, 0.158); */
     background-color: rgba(26, 12, 6, 0.514);
     padding-bottom: 2rem;
@@ -304,6 +305,7 @@ body {
     border-radius: .5rem;
 }
 
+
 /*MEMBER SECTION*/
 .member {
     /* border: 2px solid red; */
@@ -341,6 +343,7 @@ body {
 }
 .member-text h1 {
     /* border: 2px solid rgb(10, 10, 10); */
+    font-family: "Trebuchet MS", Tahoma, sans-serif;
     margin-left: 1rem;
     font-weight: 900;
     font-size: 3rem;
@@ -349,9 +352,10 @@ body {
 .member-text p {
     /* border: 2px solid rgb(10, 10, 10); */
     width: 60%;
-    line-height: 1.1rem;
+    line-height: 1.2rem;
     margin-left: 1rem;
-    font-family: 'IBM Plex Mono', sans-serif;
+    /* font-family: 'IBM', sans-serif; */
+    font-family: "Lucida Console", Monaco, sans-serif;
     font-size: 1.3rem;
     margin-block: 2rem;
 }
@@ -366,14 +370,73 @@ body {
     font-size: 1.5rem;
 }
 .member-text span {
+    font-family: 'IBM', sans-serif;
     font-style: italic;
     font-weight: bold;
     color: rgb(4, 3, 82);
 }
 
 
+/*FAQ SECTION*/
+.faqs {
+    border-block: 2px solid rgb(7, 2, 51);
+    width: 70%;
+    margin: auto;
+    padding-block: 1rem;
+    text-align: center;
+    margin-bottom: 5rem;
+}
+.faqs p {
+    color: rgb(7, 2, 51);
+    font-family: "Trebuchet MS", Tahoma, sans-serif;
+    font-size: 1.5em;
+}
+.faq-bt {
+    text-align: center;
+}
+.faq-bt button {
+    margin-top: 2em;
+    border: 2px solid black;
+    border-radius: .5em;
+    font-size: 1.2rem;
+    font-weight: bold;
+    background-color: chartreuse;
+    padding: .5rem;
+}
 
 
+/*FOOTER SECTION*/
+footer {
+    background-color: #4d204a;
+    color: whitesmoke;
+    padding: .5rem 0 0 2rem;
+}
+footer h1 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+footer a {
+    text-decoration: none;
+    color: whitesmoke;
+}
+.f-links {
+    display: flex;
+    gap: 2rem;
+}
+.f-links li {
+    list-style-type: none;
+    margin-left: 1rem;
+} 
+.flink {
+    /* border-right: 2px solid white; */
+    padding: 2rem;
+}
+.footer-logo {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 /*media queries*/
 @media (max-width: 72.45em) { /*below 1160px */
     .services .services-each {
